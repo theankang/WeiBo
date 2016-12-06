@@ -1,0 +1,36 @@
+2016-11-28 19:57:34,828 [main] INFO  Version:45 - HHH000412: Hibernate Core {5.2.3.Final}
+2016-11-28 19:57:34,838 [main] INFO  Environment:213 - HHH000206: hibernate.properties not found
+2016-11-28 19:57:34,840 [main] INFO  Environment:318 - HHH000021: Bytecode provider name : javassist
+2016-11-28 19:57:34,884 [main] WARN  deprecation:91 - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2016-11-28 19:57:35,205 [main] INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-11-28 19:57:35,367 [main] WARN  ConnectionProviderInitiator:164 - HHH000181: No appropriate connection provider encountered, assuming application will be supplying connections
+2016-11-28 19:57:35,369 [main] WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : The application must supply JDBC connections
+2016-11-28 19:57:35,390 [main] INFO  Dialect:153 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2016-11-28 19:57:35,438 [main] INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
+2016-11-28 20:00:33,718 [main] INFO  Version:45 - HHH000412: Hibernate Core {5.2.3.Final}
+2016-11-28 20:00:33,765 [main] INFO  Environment:213 - HHH000206: hibernate.properties not found
+2016-11-28 20:00:33,773 [main] INFO  Environment:318 - HHH000021: Bytecode provider name : javassist
+2016-11-28 20:00:33,947 [main] WARN  deprecation:91 - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2016-11-28 20:01:33,993 [main] INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-11-28 20:01:34,825 [main] WARN  ConnectionProviderInitiator:164 - HHH000181: No appropriate connection provider encountered, assuming application will be supplying connections
+2016-11-28 20:01:34,833 [main] WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : The application must supply JDBC connections
+2016-11-28 20:01:34,937 [main] INFO  Dialect:153 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2016-11-28 20:01:35,103 [main] INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
+2016-11-28 20:10:59,479 [main] INFO  Version:45 - HHH000412: Hibernate Core {5.2.3.Final}
+2016-11-28 20:10:59,489 [main] INFO  Environment:213 - HHH000206: hibernate.properties not found
+2016-11-28 20:10:59,492 [main] INFO  Environment:318 - HHH000021: Bytecode provider name : javassist
+2016-11-28 20:10:59,530 [main] WARN  deprecation:91 - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2016-11-28 20:11:00,222 [main] INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-11-28 20:11:00,491 [main] WARN  ConnectionProviderInitiator:164 - HHH000181: No appropriate connection provider encountered, assuming application will be supplying connections
+2016-11-28 20:11:00,494 [main] WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : The application must supply JDBC connections
+2016-11-28 20:11:00,530 [main] INFO  Dialect:153 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2016-11-28 20:11:00,578 [main] INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
+2016-11-28 20:13:47,255 [main] INFO  Version:45 - HHH000412: Hibernate Core {5.2.3.Final}
+2016-11-28 20:13:47,266 [main] INFO  Environment:213 - HHH000206: hibernate.properties not found
+2016-11-28 20:13:47,268 [main] INFO  Environment:318 - HHH000021: Bytecode provider name : javassist
+2016-11-28 20:13:47,298 [main] WARN  deprecation:91 - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2016-11-28 20:13:47,609 [main] INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-11-28 20:13:47,766 [main] WARN  ConnectionProviderInitiator:164 - HHH000181: No appropriate connection provider encountered, assuming application will be supplying connections
+2016-11-28 20:13:47,768 [main] WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : The application must supply JDBC connections
+2016-11-28 20:13:47,791 [main] INFO  Dialect:153 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2016-11-28 20:13:47,837 [main] INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
