@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -14,8 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign Up</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/login.css"/>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../css/login.css"/>
 
     <style>
         body {
@@ -56,18 +57,18 @@
 </div>
 
 <div class="auth-form" id='login'>
-    <form id='form' name="form" method="post" action="RegisterServlet">
+    <form:form id="form" action="user" method="post" >
         <div class="form-group">
             <label for='Nickname'>Nickname:</label>
-            <input name="Nickname" type="text" class='form-control' placeholder='Choose your nickname'/>
+            <input id="userNickname" name="userNickname" type="text" class='form-control' placeholder='Choose your nickname'/>
         </div>
         <div class="form-group">
             <label for='E-mail'>E-mail:</label>
-            <input name="E-mail" type="Email" class='form-control' placeholder='Your E-mail'/>
+            <input id="email" name="email" type="Email" class='form-control' placeholder='Your E-mail'/>
         </div>
         <div class="form-group">
             <label for='Password'>Password:</label>
-            <input name="Password" type="password" class='form-control' placeholder='Set your password'/>
+            <input id="userPassword" name="userPassword" type="password" class='form-control' placeholder='Set your password'/>
         </div>
         <div class="form-group">
             <label for='ComfirmPassword'>Comfirm password:</label>
@@ -78,11 +79,11 @@
                 Sign up
             </button>
         </div>
-    </form>
+    </form:form>
 </div>
 
-<script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="../../js/jquery-3.1.1.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 
 
 </body>

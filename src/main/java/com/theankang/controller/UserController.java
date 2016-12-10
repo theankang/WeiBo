@@ -1,10 +1,7 @@
 package com.theankang.controller;
 
-import org.springframework.stereotype.Controller;
-
 /**
- * Created by jsdgw on 12/6/16.
+ * Created by jsdgw on 12/10/16.
  */
-@Controller
 public class UserController {
 }

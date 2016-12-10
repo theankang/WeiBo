@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -62,8 +63,8 @@
 
         <div class = "collapse navbar-collapse" id = "navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="register.jsp">Sign Up</a></li>
-                <li><a href="login.jsp">Log In</a></li>
+                <li class="active"><a href="register">Sign Up</a></li>
+                <li><a href="login">Log In</a></li>
             </ul>
         </div>
 
