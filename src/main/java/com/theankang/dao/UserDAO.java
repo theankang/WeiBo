@@ -13,6 +13,7 @@ public interface UserDAO {
     public void deleteUser(User user);
     public User findUserById(String userId);
     public User findUserByNickName(String userNickName);
+    public User findUserByEmail(String email);
 
     // To Do..
     public List<User> findAllUser();

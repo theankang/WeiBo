@@ -1,6 +1,5 @@
 package com.theankang.dao;
 
-import com.sun.org.apache.bcel.internal.generic.LSHL;
 import com.theankang.model.Topic;
 
 import java.util.List;

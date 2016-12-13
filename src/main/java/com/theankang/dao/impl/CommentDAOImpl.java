@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by jsdgw on 12/2/16.
  */
-@Repository
+@Repository("commentDAO")
 public class CommentDAOImpl implements CommentDAO {
 
     @Autowired

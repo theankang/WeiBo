@@ -6,8 +6,4 @@
 		<excludeFolder url="file://$MODULE_DIR$/../../.gradle"/>
 		<excludeFolder url="file://$MODULE_DIR$/../../build"/>
 	</contentEntry>
-	<levels>
-		<level name="Gradle: org.springframework:spring-web:4.3.4.RELEASE" value="project"/>
-		<level name="Gradle: org.springframework:spring-webmvc:4.3.4.RELEASE" value="project"/>
-	</levels>
 </component>

@@ -15,8 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
 
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../../css/login.css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
 
     <style>
         body {
@@ -57,14 +57,14 @@
 </div>
 
 <div class="auth-form" id='login'>
-    <form role='form' method="post" target=" ">
+    <form:form role='form' method="post" action="login" modelAttribute="userLogin">
         <div class="form-group">
-            <label for='ID'>ID:</label>
-            <input type="text" class='form-control' placeholder='Your id'/>
+            <label for='Email'>Email:</label>
+            <input id="email" name="email" type="text" class='form-control' placeholder='Email'/>
         </div>
         <div class="form-group">
-            <label for='Password'>Password:</label>
-            <input type="password" class='form-control' placeholder='Your password'/>
+            <label for="Password">Password:</label>
+            <input id="userPassword" name="userPassword" type="password" class='form-control' placeholder='Your password'/>
         </div>
         <div class="checkbox">
             <label>
@@ -72,15 +72,15 @@
             </label>
         </div>
         <div class="form-group">
-            <button class="btn btn-block btn-primary" type="submit">
+            <button class="btn btn-block btn-default" type="submit">
                 Log in
             </button>
         </div>
-    </form>
+    </form:form>
 </div>
 
-<script src="../../js/jquery-3.1.1.min.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>

@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by jsdgw on 12/2/16.
  */
-@Repository
+@Repository("attentionGroupDAO")
 public class AttentionGroupDAOImpl implements AttentionGroupDAO {
 
     @Autowired

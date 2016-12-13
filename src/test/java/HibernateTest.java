@@ -21,57 +21,57 @@ public class HibernateTest {
     private ApplicationContext cxt = null;
 
     {
-        cxt = new ClassPathXmlApplicationContext("applicationContext.xml");
+        cxt = new ClassPathXmlApplicationContext("beans.xml");
 
     }
 
     @Test
     public void test() {
 
-        //1. åˆ›å»ºä¸€ä¸ª SessionFactory å¯¹è±¡
+        //1. ´´½¨Ò»¸ö SessionFactory ¶ÔÏó
         SessionFactory sessionFactory = null;
 
-        //1). åˆ›å»º Configuration å¯¹è±¡: å¯¹åº” hibernate çš„åŸºæœ¬é…ç½®ä¿¡æ¯å’Œ å¯¹è±¡å…³ç³»æ˜ å°„ä¿¡æ¯
+        //1). ´´½¨ Configuration ¶ÔÏó: ¶ÔÓ¦ hibernate µÄ»ù±¾ÅäÖÃĞÅÏ¢ºÍ ¶ÔÏó¹ØÏµÓ³ÉäĞÅÏ¢
         Configuration configuration = new Configuration().configure();
         configuration.addAnnotatedClass(User.class);
 
-        //4.0 ä¹‹å‰è¿™æ ·åˆ›å»º
+        //4.0 Ö®Ç°ÕâÑù´´½¨
         //sessionFactory = configuration.buildSessionFactory();
 
-        //4.x ä¸­è¿™æ ·åˆ›å»º
+        //4.x ÖĞÕâÑù´´½¨
         //ServiceRegistry serviceRegistry =
         //new ServiceRegistryBuilder().applySettings(configuration.getProperties())
         //        .buildServiceRegistry();
 
-        //5.x ä¸­çš„APIå•æ”¹äº†
-        //2). åˆ›å»ºä¸€ä¸ª ServiceRegistry å¯¹è±¡: hibernate 4.x æ–°æ·»åŠ çš„å¯¹è±¡
-        //hibernate çš„ä»»ä½•é…ç½®å’ŒæœåŠ¡éƒ½éœ€è¦åœ¨è¯¥å¯¹è±¡ä¸­æ³¨å†Œåæ‰èƒ½æœ‰æ•ˆ.
+        //5.x ÖĞµÄAPI…¬¸ÄÁË
+        //2). ´´½¨Ò»¸ö ServiceRegistry ¶ÔÏó: hibernate 4.x ĞÂÌí¼ÓµÄ¶ÔÏó
+        //hibernate µÄÈÎºÎÅäÖÃºÍ·şÎñ¶¼ĞèÒªÔÚ¸Ã¶ÔÏóÖĞ×¢²áºó²ÅÄÜÓĞĞ§.
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties())
                 .build();
 
         //3).
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 
-        //2. åˆ›å»ºä¸€ä¸ª Session å¯¹è±¡
+        //2. ´´½¨Ò»¸ö Session ¶ÔÏó
         Session session = sessionFactory.openSession();
 
-        //3. å¼€å¯äº‹åŠ¡
+        //3. ¿ªÆôÊÂÎñ
         Transaction transaction = session.beginTransaction();
 
-        //4. æ‰§è¡Œä¿å­˜æ“ä½œ
+        //4. Ö´ĞĞ±£´æ²Ù×÷
         //User user = new User("U0000000002", "Cube Entertainment", new Timestamp(new Date().getTime()));
         User user = new User();
         UserDAO userDao = null;
         userDao.addUser(user);
 
 
-        //5. æäº¤äº‹åŠ¡
+        //5. Ìá½»ÊÂÎñ
         transaction.commit();
 
-        //6. å…³é—­ Session
+        //6. ¹Ø±Õ Session
         session.close();
 
-        //7. å…³é—­ SessionFactory å¯¹è±¡
+        //7. ¹Ø±Õ SessionFactory ¶ÔÏó
         sessionFactory.close();
     }
 

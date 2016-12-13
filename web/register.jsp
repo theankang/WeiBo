@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -15,8 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign Up</title>
 
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../../css/login.css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
 
     <style>
         body {
@@ -42,7 +43,7 @@
             </button>
         </div>
 
-        <div class = "collapse navbar-collapse" id = "navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="register.jsp">Sign Up</a></li>
                 <li><a href="login.jsp">Log In</a></li>
@@ -56,34 +57,46 @@
     <h1>Welcome Join in Weibo</h1>
 </div>
 
+<spring:url value="register" var="actionUrl"/>
+
 <div class="auth-form" id='login'>
-    <form:form id="form" action="user" method="post" >
-        <div class="form-group">
-            <label for='Nickname'>Nickname:</label>
-            <input id="userNickname" name="userNickname" type="text" class='form-control' placeholder='Choose your nickname'/>
-        </div>
-        <div class="form-group">
-            <label for='E-mail'>E-mail:</label>
-            <input id="email" name="email" type="Email" class='form-control' placeholder='Your E-mail'/>
-        </div>
-        <div class="form-group">
-            <label for='Password'>Password:</label>
-            <input id="userPassword" name="userPassword" type="password" class='form-control' placeholder='Set your password'/>
-        </div>
-        <div class="form-group">
-            <label for='ComfirmPassword'>Comfirm password:</label>
-            <input name="ComfirmPassword" type="password" class='form-control' placeholder='Confirm your password'/>
-        </div>
-        <div class="form-group">
-            <button name="submit" class="btn btn-block btn-default" type="submit">
-                Sign up
-            </button>
-        </div>
-    </form:form>
+    <form:form id="form" action="${actionUrl}" method="post" modelAttribute="userForm">
+
+        <%--private String sex;--%>
+        <%--private String school;--%>
+        <%--private String work;--%>
+        <%--private Integer phoneNumber;--%>
+        <%--private String userInfo;--%>
+    <div class="form-group">
+        <label for="Nickname">Nickname:</label>
+        <input id="userNickname" name="userNickname" type="text" class='form-control'
+               placeholder='Choose your nickname'/>
+    </div>
+    <div class="form-group">
+        <label for="userName">UserName:</label>
+        <input id="userName" name="userName" type="text" class='form-control'/>
+    </div>
+    <div class="form-group">
+        <label for="Password">Password:</label>
+        <input id="userPassword" name="userPassword" type="password" class='form-control'/>
+    </div>
+    <div class="form-group">
+        <label for='E-mail'>E-mail:</label>
+        <input id="email" name="email" type="Email" class='form-control' placeholder='Your E-mail'/>
+    </div>
+    <div class="form-group">
+        <label for="UserInfo">UserInfo:</label>
+        <input id="userInfo" name="userInfo" type="textarea" class='form-control'/>
+    </div>
+    <button name="submit" class="btn btn-block btn-default" type="submit">
+        Submit
+    </button>
+</div>
+</form:form>
 </div>
 
-<script src="../../js/jquery-3.1.1.min.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 
 </body>

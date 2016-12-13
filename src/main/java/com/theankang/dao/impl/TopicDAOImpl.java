@@ -17,7 +17,7 @@ import java.util.List;
  * Created by jsdgw on 12/1/16.
  */
 
-@Repository
+@Repository("topicDAO")
 public class TopicDAOImpl implements TopicDAO{
     @Autowired
     private SessionFactory sessionFactory;

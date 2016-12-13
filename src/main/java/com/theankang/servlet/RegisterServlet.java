@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -29,8 +30,11 @@ public class RegisterServlet extends HttpServlet {
         user.setUserNickname(request.getParameter("Nickname"));
         user.setUserPassword(request.getParameter("Password"));
         user.setEmail(request.getParameter("E-mail"));
-        //user.setRegistrationDate(new Date().getTime());
-        // user_id auto increment with characters
+        Date currentTime = new Date();
+        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        user.setRegistrationDate(currentTime);
+
+
 
     }
 

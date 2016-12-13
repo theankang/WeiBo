@@ -25,6 +25,8 @@
           <element id="library" level="project" name="Gradle: junit:junit:4.12" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:4.3.4.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-core:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Gradle: javax.servlet.jsp.jstl:jstl-api:1.2" />
+          <element id="library" level="project" name="Gradle: taglibs:standard:1.1.2" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-aop:4.3.4.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.3.4.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-expression:4.3.4.RELEASE" />
@@ -42,6 +44,8 @@
           <element id="library" level="project" name="Gradle: javax.enterprise:cdi-api:1.1" />
           <element id="library" level="project" name="Gradle: org.apache.logging.log4j:log4j-api:2.7" />
           <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Gradle: javax.servlet:servlet-api:2.5" />
+          <element id="library" level="project" name="Gradle: javax.servlet.jsp:jsp-api:2.1" />
           <element id="library" level="project" name="Gradle: javax.el:el-api:2.2" />
           <element id="library" level="project" name="Gradle: org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1" />
           <element id="library" level="project" name="Gradle: javax.annotation:jsr250-api:1.0" />

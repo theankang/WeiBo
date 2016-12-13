@@ -1,13 +1,11 @@
 package test.java;
 
-import org.junit.Assert.*;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
@@ -20,7 +18,7 @@ public class JdbcTest {
 
 
     {
-        ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ctx = new ClassPathXmlApplicationContext("beans.xml");
         jdbcTemplate = (JdbcTemplate) ctx.getBean("jdbcTemplate");
     }
 

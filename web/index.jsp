@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -46,6 +47,9 @@
 
 </head>
 <body>
+
+<spring:url value="/index" var="userActionUrl"/>
+
 <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
     <div class="container">
 
@@ -63,8 +67,8 @@
 
         <div class = "collapse navbar-collapse" id = "navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="register">Sign Up</a></li>
-                <li><a href="login">Log In</a></li>
+                <li class="active"><a href="register.jsp">Sign Up</a></li>
+                <li><a href="login.jsp">Log In</a></li>
             </ul>
         </div>
 

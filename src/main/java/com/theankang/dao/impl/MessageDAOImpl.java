@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by jsdgw on 11/30/16.
  */
-@Repository
+@Repository("messageDAO")
 public class MessageDAOImpl implements MessageDAO{
 
     @Autowired

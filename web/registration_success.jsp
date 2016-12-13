@@ -8,9 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Registration Success</title>
+    <meta http-equiv="refresh" content="3; url=index.jsp">
 </head>
 <body>
-$END$
+<h1>Congratulations!</h1>
 </body>
 </html>

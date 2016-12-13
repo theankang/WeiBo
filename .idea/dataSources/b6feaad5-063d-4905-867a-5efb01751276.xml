@@ -279,6 +279,7 @@ messageSet_message_id</columns>
       <sequence-identity>1</sequence-identity>
     </column>
     <column id="75" parent="13" name="email">
+      <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
     <column id="76" parent="13" name="phone_number">

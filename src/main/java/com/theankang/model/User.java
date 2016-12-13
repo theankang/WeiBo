@@ -96,7 +96,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "email", nullable = true, length = 255)
+    @Column(name = "email", nullable = false, length = 255)
     public String getEmail() {
         return email;
     }
@@ -203,4 +203,5 @@ public class User {
     public User() {
 
     }
+
 }

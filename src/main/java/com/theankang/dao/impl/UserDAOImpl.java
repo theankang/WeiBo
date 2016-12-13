@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by jsdgw on 11/28/16.
  */
-@Repository
+@Repository("userDAO")
 public class UserDAOImpl implements UserDAO {
 
     @Autowired
@@ -33,6 +33,7 @@ public class UserDAOImpl implements UserDAO {
     public void updateUser(User user) {
         //String hql = "update User user set user.userNickname = ? where user.userId = ?";
         //getSession().createQuery(hql).setParameter(0, user.getUserNickname()).setParameter(1, user.getUserId()).executeUpdate();
+
         getSession().update(user);
     }
 
@@ -43,7 +44,7 @@ public class UserDAOImpl implements UserDAO {
     public User findUserById(String userId) {
         String hql = "from User user where user.userId = :userId";
         Query query = getSession().createQuery(hql);
-        query.setParameter("userId", userId);
+        query.setParameter("userId", Integer.parseInt(userId));
         User user = (User) query.uniqueResult();
         return user;
     }
@@ -52,6 +53,14 @@ public class UserDAOImpl implements UserDAO {
         String hql = "from User user where user.userNickname = :userNickname";
         Query query = getSession().createQuery(hql);
         query.setParameter("userNickname", userNickname);
+        User user = (User) query.uniqueResult();
+        return user;
+    }
+
+    public User findUserByEmail(String email) {
+        String hql = "from User user where user.email = :email";
+        Query query = getSession().createQuery(hql);
+        query.setParameter("email", email);
         User user = (User) query.uniqueResult();
         return user;
     }

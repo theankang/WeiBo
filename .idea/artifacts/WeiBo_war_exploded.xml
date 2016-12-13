@@ -46,6 +46,8 @@
           <element id="library" level="project" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" />
         </element>
       </element>
+      <element id="artifact" artifact-name="Gradle : com.theankang : WeiBo-1.0-SNAPSHOT.war" />
+      <element id="artifact" artifact-name="Gradle : com.theankang : WeiBo-1.0-SNAPSHOT.war (exploded)" />
     </root>
   </artifact>
 </component>
