@@ -13,7 +13,7 @@ import java.util.Set;
  * auto generate these JavaBean and hbm.xml file by hibernate tool.
  */
 @Entity
-@Table(name = "user_table", schema = "weibo_db", catalog = "")
+@Table(name = "user_table", schema = "weibo_db")
 public class User {
 
     private Integer userId;
@@ -166,7 +166,8 @@ public class User {
         this.registrationDate = registrationDate;
     }
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
     public Set<Message> getMessageSet() {
         return messageSet;
     }
@@ -175,7 +176,8 @@ public class User {
         this.messageSet = messageSet;
     }
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
     public Set<Comment> getCommentSet() {
         return commentSet;
     }
@@ -184,7 +186,8 @@ public class User {
         this.commentSet = commentSet;
     }
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
     public Set<AttentionGroup> getAttentionGroupSet() {
         return attentionGroupSet;
     }

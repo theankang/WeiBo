@@ -1,0 +1,26 @@
+2017-1-21 23:58:57
+
+    modify the mapping url in controller GET
+
+    after user login forward to a user's weibo site  TO BE CONTINUE
+    the site contains a link to user's profile
+
+    the urgent task is save login info into session GET
+
+    add an interceptor to force forward "index" TO BE CONTINUE
+
+2017-1-23 02:08:39
+
+    the next will be quick
+
+2017-1-25 14:46:59
+
+    clearly I'm wrong. configure this make me feel tired
+
+    org.springframework.orm.hibernate5.support.OpenSessionInViewInterceptor
+
+2017-1-26 03:25:54
+
+    finish BaseController and write MessageController extends BaseController
+
+    in MessageController deal with /user/${user.userId}/msg/add URI request

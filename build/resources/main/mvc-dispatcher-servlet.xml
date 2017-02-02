@@ -18,19 +18,28 @@
 
     <mvc:annotation-driven/>
 
-    <mvc:resources mapping="/css/**" location="/css/"/>
-    <mvc:resources mapping="/fonts/**" location="/fonts/"/>
-    <mvc:resources mapping="/images/**" location="/images/"/>
-    <mvc:resources mapping="/js/**" location="/js/"/>
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+    <mvc:resources mapping="/css/**" location="/resources/css/"/>
+    <mvc:resources mapping="/fonts/**" location="/resources/fonts/"/>
+    <mvc:resources mapping="/images/**" location="/resources/images/"/>
+    <mvc:resources mapping="/js/**" location="/resources/js/"/>
+    <mvc:resources mapping="/js/lib/**" location="/resources/js/lib/"/>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+        <mvc:mapping path="/*" />
+        <bean class="org.springframework.orm.hibernate5.support.OpenSessionInViewInterceptor">
+            <property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+        <!-- 自定义的权限拦截验证，如果不定义 mvc:mapping path 将拦截所有的URL请求 -->
+        <!--<bean class="com.website.hpuxiaoyoulu.web.auth.AuthInterceptor"></bean>-->
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value=""/>
+        <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-
-    <!--<bean class = "com.theankang.controller.UserController"></bean>-->
-
-    <!--<mvc:view-controller path="/user/register" view-name="register"/>-->
 
 
 </beans>

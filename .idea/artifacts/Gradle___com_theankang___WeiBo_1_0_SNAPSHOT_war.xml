@@ -27,6 +27,7 @@
           <element id="library" level="project" name="Gradle: org.springframework:spring-core:4.3.4.RELEASE" />
           <element id="library" level="project" name="Gradle: javax.servlet.jsp.jstl:jstl-api:1.2" />
           <element id="library" level="project" name="Gradle: taglibs:standard:1.1.2" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.6" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-aop:4.3.4.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.3.4.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-expression:4.3.4.RELEASE" />
@@ -46,10 +47,12 @@
           <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
           <element id="library" level="project" name="Gradle: javax.servlet:servlet-api:2.5" />
           <element id="library" level="project" name="Gradle: javax.servlet.jsp:jsp-api:2.1" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.8.6" />
           <element id="library" level="project" name="Gradle: javax.el:el-api:2.2" />
           <element id="library" level="project" name="Gradle: org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1" />
           <element id="library" level="project" name="Gradle: javax.annotation:jsr250-api:1.0" />
           <element id="library" level="project" name="Gradle: javax.inject:javax.inject:1" />
+          <element id="file-copy" path="D:/Program Files/gradle-3.2.1/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.8.6/9577018f9ce3636a2e1cb0a0c7fe915e5098ded5/jackson-annotations-2.8.6.jar" />
         </element>
       </element>
       <element id="directory" name="META-INF">

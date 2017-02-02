@@ -22,6 +22,9 @@
 		<level name="Gradle: org.springframework:spring-core:4.3.4.RELEASE" value="project"/>
 		<level name="Gradle: javax.servlet.jsp.jstl:jstl-api:1.2" value="project"/>
 		<level name="Gradle: taglibs:standard:1.1.2" value="project"/>
+		<level name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.6" value="project"/>
+		<level name="Gradle: com.fasterxml.jackson.core:jackson-core:2.8.6" value="project"/>
+		<level name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.8.6" value="project"/>
 		<level name="Gradle: javax.servlet:javax.servlet-api:3.1.0" value="project"/>
 		<level name="Gradle: javax.websocket:javax.websocket-api:1.0" value="project"/>
 		<level name="Gradle: org.springframework:spring-aop:4.3.4.RELEASE" value="project"/>

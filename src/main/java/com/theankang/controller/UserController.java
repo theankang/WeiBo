@@ -15,6 +15,7 @@ import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.*;
 
 /**
@@ -25,14 +26,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
-//    @Autowired
-//    HttpServletRequest request;
-
-    @RequestMapping(value = "/index")
-    public String index() {
-        return "index";
-    }
 
     @RequestMapping(value = "/registration_success")
     public String registrationSuccess() {
@@ -53,28 +46,75 @@ public class UserController {
         return "redirect:/registration_success";
     }
 
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String toRegister() {
+
+        return "register";
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@ModelAttribute("userLogin") User userLogin) {
+    public ModelAndView login(@ModelAttribute("userLogin") User userLogin, HttpSession httpSession) {
 
         String email = userLogin.getEmail();
         String password = userLogin.getUserPassword();
 
         if(!userService.checkLogin(email, password)) {
-            return "/login_error";
+            return new ModelAndView(new RedirectView("login_error"));
         }
         User userFromDB = userService.findUserByEmail(email);
-        String url = "redirect:/user/info/" + userFromDB.getUserId().toString();
-        /*
-         * return new ModelAndView("redirect:/user/info");
-         */
-        return url;
+        String url = "user/" + userFromDB.getUserId().toString() + "/home";
+        httpSession.setAttribute("user", userFromDB);
+        return new ModelAndView(new RedirectView(url));
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String toLogin(@ModelAttribute("userLogin") User userLogin) {
+
+
+        return "login";
+    }
+
+    @RequestMapping(value = "/login_error")
+    public String toLoginError() {
+
+        return "login_error";
+    }
+
+    @RequestMapping(value = "/user/{id}/home")
+    public String toUserHome(@PathVariable String id, HttpSession httpSession) {
+        System.out.println("-------------/user/{id}/home-------------");
+        System.out.println(((User)httpSession.getAttribute("user")).getAttentionGroupSet().toString());
+        return "/user/home";
+    }
+
+    @RequestMapping(value = "/user/logout")
+    public String logout(HttpSession httpSession) {
+
+        httpSession.removeAttribute("user");
+        System.out.println("This is /user/logout");
+        return "redirect:/index";
+    }
+
+    @RequestMapping(value = "/user/{id}/profile")
+    public String toUserProfile(@PathVariable String id, HttpSession httpSession) {
+
+        System.out.println("This is /user/{id}/profile");
+        return "/user/profile";
+    }
+
+
+
+
+
+
+
+
+
 
     @RequestMapping(value = "/user/info/{id}", method = RequestMethod.GET)
     public ModelAndView userInfo(@PathVariable String id) {
 
         String url = "/user/info";
-//        String url = "/user/info" + id;
         ModelAndView modelAndView = new ModelAndView(url);
         User userFromDB = userService.findUserById(id);
         List<User> userList = new LinkedList<User>();

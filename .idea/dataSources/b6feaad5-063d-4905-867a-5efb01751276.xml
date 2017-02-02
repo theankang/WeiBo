@@ -8,414 +8,381 @@
     <schema id="3" name="mysql"/>
     <schema id="4" name="performance_schema"/>
     <schema id="5" name="backup"/>
-    <table id="6" parent="1" name="attention_group_table"/>
-    <table id="7" parent="1" name="attention_group_table_user_table"/>
-    <table id="8" parent="1" name="comment_table"/>
-    <table id="9" parent="1" name="message_table"/>
-    <table id="10" parent="1" name="message_table_comment_table"/>
-    <table id="11" parent="1" name="topic_table"/>
-    <table id="12" parent="1" name="topic_table_message_table"/>
-    <table id="13" parent="1" name="user_table"/>
-    <table id="14" parent="1" name="user_table_attention_group_table"/>
-    <table id="15" parent="1" name="user_table_comment_table"/>
-    <table id="16" parent="1" name="user_table_message_table"/>
-    <column id="17" parent="6" name="attention_group_id">
+    <schema id="6" name="springdemo"/>
+    <schema id="7" name="store_db"/>
+    <table id="8" parent="1" name="attention_group_table"/>
+    <table id="9" parent="1" name="attention_group_table_user_table"/>
+    <table id="10" parent="1" name="comment_table"/>
+    <table id="11" parent="1" name="message_table"/>
+    <table id="12" parent="1" name="message_table_comment_table"/>
+    <table id="13" parent="1" name="topic_table"/>
+    <table id="14" parent="1" name="topic_table_message_table"/>
+    <table id="15" parent="1" name="user_table"/>
+    <table id="16" parent="1" name="user_table_comment_table"/>
+    <table id="17" parent="1" name="user_table_message_table"/>
+    <column id="18" parent="8" name="attention_group_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="18" parent="6" name="attention_group_member_sum">
+    <column id="19" parent="8" name="attention_group_member_sum">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="19" parent="6" name="attention_group_name">
+    <column id="20" parent="8" name="attention_group_name">
       <mandatory>1</mandatory>
       <data-type>varchar(20)|0</data-type>
     </column>
-    <column id="20" parent="6" name="user_id">
+    <column id="21" parent="8" name="user_id">
       <data-type>int(11)|0</data-type>
     </column>
-    <index id="21" parent="6" name="FK8r4ofmymhm8dljlvhmlkk3fpr">
+    <index id="22" parent="8" name="FK8r4ofmymhm8dljlvhmlkk3fpr">
       <columns>user_id</columns>
       <desc-columns></desc-columns>
     </index>
-    <key id="22" parent="6" name="PRIMARY">
+    <key id="23" parent="8" name="PRIMARY">
       <columns>attention_group_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="23" parent="6" name="FK8r4ofmymhm8dljlvhmlkk3fpr">
+    <foreign-key id="24" parent="8" name="FK8r4ofmymhm8dljlvhmlkk3fpr">
       <columns>user_id</columns>
       <ref-key>~.user_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="24" parent="7" name="AttentionGroup_attention_group_id">
+    <column id="25" parent="9" name="AttentionGroup_attention_group_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="25" parent="7" name="memberSet_user_id">
+    <column id="26" parent="9" name="memberSet_user_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <index id="26" parent="7" name="UK_blj1ea1xk4em6livu3ufdckxx">
+    <index id="27" parent="9" name="UK_blj1ea1xk4em6livu3ufdckxx">
       <columns>memberSet_user_id</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <key id="27" parent="7" name="PRIMARY">
+    <key id="28" parent="9" name="PRIMARY">
       <columns>AttentionGroup_attention_group_id
 memberSet_user_id</columns>
       <primary>1</primary>
     </key>
-    <key id="28" parent="7" name="UK_blj1ea1xk4em6livu3ufdckxx">
+    <key id="29" parent="9" name="UK_blj1ea1xk4em6livu3ufdckxx">
       <columns>memberSet_user_id</columns>
       <underlying-index>UK_blj1ea1xk4em6livu3ufdckxx</underlying-index>
     </key>
-    <foreign-key id="29" parent="7" name="FKmynfhrvlvrwjlfd1auhbnuact">
+    <foreign-key id="30" parent="9" name="FKmynfhrvlvrwjlfd1auhbnuact">
       <columns>AttentionGroup_attention_group_id</columns>
       <ref-key>~.attention_group_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="30" parent="7" name="FKba5fwe056g26c3ke7u5s5evf3">
+    <foreign-key id="31" parent="9" name="FKba5fwe056g26c3ke7u5s5evf3">
       <columns>memberSet_user_id</columns>
       <ref-key>~.user_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="31" parent="8" name="comment_id">
+    <column id="32" parent="10" name="comment_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="32" parent="8" name="comment_content">
+    <column id="33" parent="10" name="comment_content">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="33" parent="8" name="comment_time">
+    <column id="34" parent="10" name="comment_time">
       <mandatory>1</mandatory>
       <data-type>datetime|0</data-type>
     </column>
-    <column id="34" parent="8" name="message_id">
+    <column id="35" parent="10" name="message_id">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="35" parent="8" name="user_id">
+    <column id="36" parent="10" name="user_id">
       <data-type>int(11)|0</data-type>
     </column>
-    <index id="36" parent="8" name="FK6numxvdlbvx8ucfuscr9op8ed">
+    <index id="37" parent="10" name="FK6numxvdlbvx8ucfuscr9op8ed">
       <columns>message_id</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="37" parent="8" name="FKsml60a9lgrwo534aco8w7wjli">
+    <index id="38" parent="10" name="FKsml60a9lgrwo534aco8w7wjli">
       <columns>user_id</columns>
       <desc-columns></desc-columns>
     </index>
-    <key id="38" parent="8" name="PRIMARY">
+    <key id="39" parent="10" name="PRIMARY">
       <columns>comment_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="39" parent="8" name="FK6numxvdlbvx8ucfuscr9op8ed">
+    <foreign-key id="40" parent="10" name="FK6numxvdlbvx8ucfuscr9op8ed">
       <columns>message_id</columns>
       <ref-key>~.message_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="40" parent="8" name="FKsml60a9lgrwo534aco8w7wjli">
+    <foreign-key id="41" parent="10" name="FKsml60a9lgrwo534aco8w7wjli">
       <columns>user_id</columns>
       <ref-key>~.user_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="41" parent="9" name="message_id">
+    <column id="42" parent="11" name="message_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="42" parent="9" name="links">
+    <column id="43" parent="11" name="links">
       <data-type>varchar(150)|0</data-type>
     </column>
-    <column id="43" parent="9" name="message_content">
+    <column id="44" parent="11" name="message_content">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="44" parent="9" name="message_favorite">
+    <column id="45" parent="11" name="message_favorite">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="45" parent="9" name="message_forward">
+    <column id="46" parent="11" name="message_forward">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="46" parent="9" name="message_published_time">
+    <column id="47" parent="11" name="message_published_time">
       <mandatory>1</mandatory>
       <data-type>datetime|0</data-type>
     </column>
-    <column id="47" parent="9" name="message_reply">
+    <column id="48" parent="11" name="message_reply">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="48" parent="9" name="topic_id">
+    <column id="49" parent="11" name="topic_id">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="49" parent="9" name="user_id">
+    <column id="50" parent="11" name="user_id">
       <data-type>int(11)|0</data-type>
     </column>
-    <index id="50" parent="9" name="FKlrus1ud0m8i3bs56bsgnk37x9">
+    <index id="51" parent="11" name="FKlrus1ud0m8i3bs56bsgnk37x9">
       <columns>topic_id</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="51" parent="9" name="FKstf0qodk5vapq4via4wj9k1p5">
+    <index id="52" parent="11" name="FKstf0qodk5vapq4via4wj9k1p5">
       <columns>user_id</columns>
       <desc-columns></desc-columns>
     </index>
-    <key id="52" parent="9" name="PRIMARY">
+    <key id="53" parent="11" name="PRIMARY">
       <columns>message_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="53" parent="9" name="FKlrus1ud0m8i3bs56bsgnk37x9">
+    <foreign-key id="54" parent="11" name="FKlrus1ud0m8i3bs56bsgnk37x9">
       <columns>topic_id</columns>
       <ref-key>~.topic_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="54" parent="9" name="FKstf0qodk5vapq4via4wj9k1p5">
+    <foreign-key id="55" parent="11" name="FKstf0qodk5vapq4via4wj9k1p5">
       <columns>user_id</columns>
       <ref-key>~.user_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="55" parent="10" name="Message_message_id">
+    <column id="56" parent="12" name="Message_message_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="56" parent="10" name="commentSet_comment_id">
+    <column id="57" parent="12" name="commentSet_comment_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <index id="57" parent="10" name="UK_gfdjpgc444ck7iqksn1x5op3a">
+    <index id="58" parent="12" name="UK_gfdjpgc444ck7iqksn1x5op3a">
       <columns>commentSet_comment_id</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <key id="58" parent="10" name="PRIMARY">
+    <key id="59" parent="12" name="PRIMARY">
       <columns>Message_message_id
 commentSet_comment_id</columns>
       <primary>1</primary>
     </key>
-    <key id="59" parent="10" name="UK_gfdjpgc444ck7iqksn1x5op3a">
+    <key id="60" parent="12" name="UK_gfdjpgc444ck7iqksn1x5op3a">
       <columns>commentSet_comment_id</columns>
       <underlying-index>UK_gfdjpgc444ck7iqksn1x5op3a</underlying-index>
     </key>
-    <foreign-key id="60" parent="10" name="FK8s1687qaigr4xpaxehe8m01c2">
+    <foreign-key id="61" parent="12" name="FK8s1687qaigr4xpaxehe8m01c2">
       <columns>Message_message_id</columns>
       <ref-key>~.message_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="61" parent="10" name="FKlt74mp2n1dtoupmc6wn4wct9j">
+    <foreign-key id="62" parent="12" name="FKlt74mp2n1dtoupmc6wn4wct9j">
       <columns>commentSet_comment_id</columns>
       <ref-key>~.comment_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="62" parent="11" name="topic_id">
+    <column id="63" parent="13" name="topic_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="63" parent="11" name="topic_content">
+    <column id="64" parent="13" name="topic_content">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="64" parent="11" name="topic_name">
+    <column id="65" parent="13" name="topic_name">
       <mandatory>1</mandatory>
       <data-type>varchar(20)|0</data-type>
     </column>
-    <column id="65" parent="11" name="topic_sum">
+    <column id="66" parent="13" name="topic_sum">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <key id="66" parent="11" name="PRIMARY">
+    <key id="67" parent="13" name="PRIMARY">
       <columns>topic_id</columns>
       <primary>1</primary>
     </key>
-    <column id="67" parent="12" name="Topic_topic_id">
+    <column id="68" parent="14" name="Topic_topic_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="68" parent="12" name="messageSet_message_id">
+    <column id="69" parent="14" name="messageSet_message_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <index id="69" parent="12" name="UK_d0kgtmkiceyqj498mdpe6f2jx">
+    <index id="70" parent="14" name="UK_d0kgtmkiceyqj498mdpe6f2jx">
       <columns>messageSet_message_id</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <key id="70" parent="12" name="PRIMARY">
+    <key id="71" parent="14" name="PRIMARY">
       <columns>Topic_topic_id
 messageSet_message_id</columns>
       <primary>1</primary>
     </key>
-    <key id="71" parent="12" name="UK_d0kgtmkiceyqj498mdpe6f2jx">
+    <key id="72" parent="14" name="UK_d0kgtmkiceyqj498mdpe6f2jx">
       <columns>messageSet_message_id</columns>
       <underlying-index>UK_d0kgtmkiceyqj498mdpe6f2jx</underlying-index>
     </key>
-    <foreign-key id="72" parent="12" name="FKq0446esxuxrqeyvvhiuxpr2y9">
+    <foreign-key id="73" parent="14" name="FKq0446esxuxrqeyvvhiuxpr2y9">
       <columns>Topic_topic_id</columns>
       <ref-key>~.topic_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="73" parent="12" name="FK5hl8yrtikp97ny90hg0hont6l">
+    <foreign-key id="74" parent="14" name="FK5hl8yrtikp97ny90hg0hont6l">
       <columns>messageSet_message_id</columns>
       <ref-key>~.message_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="74" parent="13" name="user_id">
+    <column id="75" parent="15" name="user_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="75" parent="13" name="email">
+    <column id="76" parent="15" name="email">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="76" parent="13" name="phone_number">
+    <column id="77" parent="15" name="phone_number">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="77" parent="13" name="registration_time">
+    <column id="78" parent="15" name="registration_time">
       <mandatory>1</mandatory>
       <data-type>datetime|0</data-type>
     </column>
-    <column id="78" parent="13" name="school">
+    <column id="79" parent="15" name="school">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="79" parent="13" name="sex">
+    <column id="80" parent="15" name="sex">
       <data-type>varchar(1)|0</data-type>
     </column>
-    <column id="80" parent="13" name="user_info">
+    <column id="81" parent="15" name="user_info">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="81" parent="13" name="user_name">
+    <column id="82" parent="15" name="user_name">
       <data-type>varchar(20)|0</data-type>
     </column>
-    <column id="82" parent="13" name="user_nickname">
+    <column id="83" parent="15" name="user_nickname">
       <mandatory>1</mandatory>
       <data-type>varchar(20)|0</data-type>
     </column>
-    <column id="83" parent="13" name="user_password">
+    <column id="84" parent="15" name="user_password">
       <mandatory>1</mandatory>
       <data-type>varchar(20)|0</data-type>
     </column>
-    <column id="84" parent="13" name="user_profile_photo">
+    <column id="85" parent="15" name="user_profile_photo">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="85" parent="13" name="work">
+    <column id="86" parent="15" name="work">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <key id="86" parent="13" name="PRIMARY">
+    <key id="87" parent="15" name="PRIMARY">
       <columns>user_id</columns>
       <primary>1</primary>
     </key>
-    <column id="87" parent="14" name="User_user_id">
+    <column id="88" parent="16" name="User_user_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="88" parent="14" name="attentionGroupSet_attention_group_id">
+    <column id="89" parent="16" name="commentSet_comment_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <index id="89" parent="14" name="UK_gjmh9be1bx1s053kch37kgy8k">
-      <columns>attentionGroupSet_attention_group_id</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
-    </index>
-    <key id="90" parent="14" name="PRIMARY">
-      <columns>User_user_id
-attentionGroupSet_attention_group_id</columns>
-      <primary>1</primary>
-    </key>
-    <key id="91" parent="14" name="UK_gjmh9be1bx1s053kch37kgy8k">
-      <columns>attentionGroupSet_attention_group_id</columns>
-      <underlying-index>UK_gjmh9be1bx1s053kch37kgy8k</underlying-index>
-    </key>
-    <foreign-key id="92" parent="14" name="FK4xav5a0ffmqrc3u1r4jbqf0j7">
-      <columns>User_user_id</columns>
-      <ref-key>~.user_table.PRIMARY</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
-    </foreign-key>
-    <foreign-key id="93" parent="14" name="FKatxshrljjg4jpe9s2u5wrv0x0">
-      <columns>attentionGroupSet_attention_group_id</columns>
-      <ref-key>~.attention_group_table.PRIMARY</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
-    </foreign-key>
-    <column id="94" parent="15" name="User_user_id">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="95" parent="15" name="commentSet_comment_id">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-    </column>
-    <index id="96" parent="15" name="UK_ffkdmxy7w78y2ujvis0fc5xg6">
+    <index id="90" parent="16" name="UK_ffkdmxy7w78y2ujvis0fc5xg6">
       <columns>commentSet_comment_id</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <key id="97" parent="15" name="PRIMARY">
+    <key id="91" parent="16" name="PRIMARY">
       <columns>User_user_id
 commentSet_comment_id</columns>
       <primary>1</primary>
     </key>
-    <key id="98" parent="15" name="UK_ffkdmxy7w78y2ujvis0fc5xg6">
+    <key id="92" parent="16" name="UK_ffkdmxy7w78y2ujvis0fc5xg6">
       <columns>commentSet_comment_id</columns>
       <underlying-index>UK_ffkdmxy7w78y2ujvis0fc5xg6</underlying-index>
     </key>
-    <foreign-key id="99" parent="15" name="FKcteuj8rug1t7i55r1b6tn1vu">
+    <foreign-key id="93" parent="16" name="FKcteuj8rug1t7i55r1b6tn1vu">
       <columns>User_user_id</columns>
       <ref-key>~.user_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="100" parent="15" name="FKigqqed3gjbws81dv6llevogks">
+    <foreign-key id="94" parent="16" name="FKigqqed3gjbws81dv6llevogks">
       <columns>commentSet_comment_id</columns>
       <ref-key>~.comment_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="101" parent="16" name="User_user_id">
+    <column id="95" parent="17" name="User_user_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="102" parent="16" name="messageSet_message_id">
+    <column id="96" parent="17" name="messageSet_message_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <index id="103" parent="16" name="UK_8fx3dubof0qe088ln4twpb6e7">
+    <index id="97" parent="17" name="UK_8fx3dubof0qe088ln4twpb6e7">
       <columns>messageSet_message_id</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <key id="104" parent="16" name="PRIMARY">
+    <key id="98" parent="17" name="PRIMARY">
       <columns>User_user_id
 messageSet_message_id</columns>
       <primary>1</primary>
     </key>
-    <key id="105" parent="16" name="UK_8fx3dubof0qe088ln4twpb6e7">
+    <key id="99" parent="17" name="UK_8fx3dubof0qe088ln4twpb6e7">
       <columns>messageSet_message_id</columns>
       <underlying-index>UK_8fx3dubof0qe088ln4twpb6e7</underlying-index>
     </key>
-    <foreign-key id="106" parent="16" name="FKlcjuiq8huy7dld2pfjx1v1xb5">
+    <foreign-key id="100" parent="17" name="FKlcjuiq8huy7dld2pfjx1v1xb5">
       <columns>User_user_id</columns>
       <ref-key>~.user_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="107" parent="16" name="FKk70dtnkh0if99gudk1jyou8se">
+    <foreign-key id="101" parent="17" name="FKk70dtnkh0if99gudk1jyou8se">
       <columns>messageSet_message_id</columns>
       <ref-key>~.message_table.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
